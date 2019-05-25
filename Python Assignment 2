@@ -1,0 +1,45 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Mar 10 19:52:08 2018
+
+@author: jofadamiro
+"""
+
+status = str(input("Are you married or single (M or S)?: "))
+
+if status == "married" or status == "single":
+    income = float(input("What is your income? $"))
+
+    tax = 0
+
+    if status == "single":
+        if income > 0 and income <= 8000:
+            tax = income * 0.10
+
+        elif income > 8000 and income <= 32000:
+            tax = (income * 0.15) + 800
+
+        elif income > 32000:
+            tax = (income * 0.25) + 4400
+
+       
+
+    if status == "married":
+        if income > 0 and income <= 16000:
+            tax = income * 0.10
+
+        elif income > 16000 and income <= 64000:
+            tax = (income * 0.15) + 1600
+
+        elif income > 64000:
+            tax = (income * 0.25) + 8800
+
+        else:
+            print("Invalid income input")
+
+
+    if(income > 0):
+        print("Your tax payable is: $%f" % tax)
+
+else:
+    print("Invalid input")
